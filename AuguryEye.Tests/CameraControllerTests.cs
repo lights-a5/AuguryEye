@@ -15,13 +15,14 @@ namespace AuguryEye.Tests
         [TestMethod()]
         public void ExtractCardImageTest()
         {
-            CameraController controller = new CameraController();
-            Mat testImage = new Mat("F:\\camera_cap.jpg");
+            Mat definitionImage = new Mat("testRes\\captured.jpg");
+            Mat testImage = new Mat("testRes\\original.jpg");
+            CameraController camera = new CameraController();
+            CardIdentifier identifier = new CardIdentifier("imageHashMap.json");
 
-            Mat returnedImage = controller.GetCardImage(testImage);
-            Cv2.ImWrite("testRes/original.jpg", testImage);
-            Cv2.ImWrite("testRes/captured.jpg", returnedImage);
-                        
+            Mat returnedImage = camera.GetCardImage(testImage);
+
+            Assert.AreEqual(identifier.getHash(definitionImage), identifier.getHash(returnedImage));            
         }
     }
 }

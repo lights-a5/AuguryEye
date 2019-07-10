@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using OpenCvSharp;
 
 namespace AuguryEye
@@ -91,6 +93,11 @@ namespace AuguryEye
                         arrayContourPoints[i] = contourPoints[i];
                     }
                     var corners = GetCorners(arrayContourPoints);
+                    if (corners == null)
+                    {
+                        returnCardImage = null;
+                        break;
+                    }
                     int rotation = GetCardRotation(corners);
                     ///The order of the corners matter for the perspective transform. The order differs depending on rotation.
                     if (rotation < 0)
@@ -144,6 +151,8 @@ namespace AuguryEye
             Point2f rightCorner = new Point2f(0, 0);
             Point2f topCorner = new Point2f(int.MaxValue, int.MaxValue);
             Point2f bottomCorner = new Point2f(0, 0);
+
+
             foreach (Point2f point in cardPoints)
             {
                 if (point.Y < topCorner.Y)
@@ -168,7 +177,10 @@ namespace AuguryEye
             returnDict.Add("leftCorner", leftCorner);
             returnDict.Add("rightCorner", rightCorner);
             returnDict.Add("bottomCorner", bottomCorner);
-            return returnDict;
+            //Something is wrong if a corner was used more than once. Return null if occurs.
+            var duplicateValues = returnDict.GroupBy(x => x.Value).Where(x => x.Count() > 1);
+            if (!duplicateValues.Any()) return returnDict;
+            else return null;
         }
 
         /// <summary>

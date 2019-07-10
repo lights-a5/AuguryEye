@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuguryEye", "AuguryEye\Augu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuguryEye.Tests", "AuguryEye.Tests\AuguryEye.Tests.csproj", "{82491326-67D6-47AA-8223-084FCF879B1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelperTestFunctions", "TakePictures\HelperTestFunctions.csproj", "{382A7D22-EB85-4C01-8C63-312853663909}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Card", "Card\Card.csproj", "{DDB5B9BB-3624-43D0-A673-0679A4C73312}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{82491326-67D6-47AA-8223-084FCF879B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82491326-67D6-47AA-8223-084FCF879B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82491326-67D6-47AA-8223-084FCF879B1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{382A7D22-EB85-4C01-8C63-312853663909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{382A7D22-EB85-4C01-8C63-312853663909}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{382A7D22-EB85-4C01-8C63-312853663909}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{382A7D22-EB85-4C01-8C63-312853663909}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDB5B9BB-3624-43D0-A673-0679A4C73312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDB5B9BB-3624-43D0-A673-0679A4C73312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDB5B9BB-3624-43D0-A673-0679A4C73312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDB5B9BB-3624-43D0-A673-0679A4C73312}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

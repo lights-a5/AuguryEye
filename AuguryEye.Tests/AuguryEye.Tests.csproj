@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="CameraControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CardIdentifierTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -72,6 +73,10 @@
     <ProjectReference Include="..\AuguryEye\AuguryEye.csproj">
       <Project>{9D3BBAFD-8FC3-4E8F-B09D-3049F7AE2952}</Project>
       <Name>AuguryEye</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Card\Card.csproj">
+      <Project>{DDB5B9BB-3624-43D0-A673-0679A4C73312}</Project>
+      <Name>Card</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
